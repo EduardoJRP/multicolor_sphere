@@ -1,14 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { BrowserRouter } from 'react-router-dom';
 
-function App() {
-  const [count, setCount] = useState(0)
+import { About, Contact, Experience, Feedbacks, Hero,
+   Navbar, Works, StarsCanvas, Tech } from './components'
 
+const App = () => {
   return (
-    <div>
-      3D Developer Portfolio
-    </div>
+    <BrowserRouter>
+      <div className="relative z-0 bg-primary">
+        <div className="bg-hero-patter bg-cover
+         bg-no-repeat bg-center">
+          <Navbar />
+          <Hero />
+        </div>
+        <About />
+        <Experience />
+        <Tech />
+        <Works />
+        <Feedbacks />
+        <div className='relative z-0'>
+          <Contact />
+          <StarsCanvas />
+        </div>
+      </div>
+    </BrowserRouter>
   )
 }
 
